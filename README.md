@@ -83,6 +83,29 @@ const action = {
 
 Reducer 函数不用手动调用，store.dispatch 方法会触发 Reducer 的自动执行。为此，Store 需要知道 Reducer 函数，做法就是在生成 Store 的时候，将 Reducer 传入 createStore 方法。
 
+### combineReducers
+
+combineReducers 辅助函数的作用是，把一个由多个不同 reducer 函数作为 value 的 object，合并成一个最终的 reducer 函数，然后就可以对这个 reducer 调用 createStore。
+
+```js
+import { combineReducers } from 'redux'
+
+const todos = (state, action) => {
+    switch(action.type) {
+        case '':
+        break;
+    }
+    ...
+}
+const visibilityFilter = (state, action) => {
+    ...
+}
+const todoApp = combineReducers({
+    todos,
+    visibilityFilter
+});
+```
+
 
 ### connect 
 
