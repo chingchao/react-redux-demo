@@ -118,12 +118,14 @@ class Theme extends Component {
     ....
 }
 
-const mapStateToProps = state => {
+const mapStateToProps = (state, ownProps) => {
     return {
         themeColor: state.themeColor
     }
 };
-const mapDispatchToProp = dispatch => {
+//参数1为state对象，参数2为容器组件的props对象
+
+const mapDispatchToProp = (dispatch, ownProps) => {
     return {
         onSwitchColor: color => {
             dispatch({
